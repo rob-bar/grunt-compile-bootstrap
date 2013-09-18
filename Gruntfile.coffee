@@ -61,6 +61,16 @@ module.exports = (grunt) ->
             dest: "assets/img/"
         ]
 
+    jade:
+      compile:
+        options:
+          compileDebug: false
+          client: true
+          amd: true
+        files:
+          "assets/templates/templates.js": ["assets/templates/*.jade"]
+
+
     watch:
       app:
         files: ['assets/coffee/**/*.coffee']
@@ -71,12 +81,16 @@ module.exports = (grunt) ->
       scss:
         files: ['assets/css/**/*.scss']
         tasks: ['compass']
+      jade:
+        files: ['assets/templates/**/*.jade']
+        tasks: ['jade']
 
   # Default task.
   grunt.registerTask 'default', [
     'compass'
     'coffee'
     'jshint'
+    'jade'
   ]
 
   # deploy
@@ -84,6 +98,7 @@ module.exports = (grunt) ->
     'compass'
     'coffee'
     'jshint'
+    'jade'
     'imagemin'
     'requirejs'
   ]
