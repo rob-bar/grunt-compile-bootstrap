@@ -1,80 +1,99 @@
 # Grunt compile bootstrap
 
-This is a basic [Grunt](http://gruntjs.com/) setup for
+This is a bootstraped [Grunt](http://gruntjs.com/) setup for
 
 - Sass
+- Less
 - Coffeescript
-	- concatinated
-	- sourcemaps
 - Javascript
-	- minified
-	- sourcemaps
+- handlebars
+- requirejs
+- jade
+- uglify
+- concatinate
 - Watch tasks
 
+You might want to do some tweaks of your own, if your setup is a little different.
 ## Directory setup
 
 It assumes the following directory setup:
 
-```
-assets/
-  js/
-    *.js
-  coffee/
-    **/*.coffee
-  img/
-  fonts/
-  css/
-    *.sass
-    *.css
-```
+	assets/
+		js/
+			**/*.js
+		coffee/
+			**/*.coffee
+		img/
+			**/*.png, **/*.jpg, **/*.jpeg
+		fonts/
+		css/
+			**/*.sass
+			**/*.less
+			**/*.css
+		templates/
+			**/*.jade
+			**/*.handlebars
+
 
 ## Installation
 
-Of course you need [node.js](http://nodejs.org/).
-You start by installing the necessary [node packages](https://npmjs.org/) (defined in `package.json`).
+You need [node.js](http://nodejs.org/).<br>
+You start by installing the necessary [node packages](https://npmjs.org/)<br>
+(defined in `package.json`).
 
 `$ npm install`
 
-Make sure you add the `node_modules` directory in your `.gitignore`.
-This will install the following packages:
-
-- grunt-contrib-coffee
-- grunt-contrib-compass
-- grunt-contrib-watch
-- grunt-jsmin-sourcemap
-- grunt-contrib-jshint
-
 ## Commands
 
-Start the default task:
+`$ grunt`<br>
+`$ grunt watch`<br>
+`$ grunt deploy`<br>
 
-`$ grunt`
+or custom commands
 
-Start the watch task for the coffeescripts:
+`$ grunt compass`<br>
+`$ grunt coffee`<br>
 
-`$ grunt watch:app`
+etc.
 
-Start the watch task for the sass files:
+## Branches
 
-`$ grunt watch:sass`
-
-## Resulting files
-
-It produces the following files:
-
-```
-assets/
-	js/
-		main.js
-		main.js.map
-		main.map
-		main.min.js
-```
-
-You can include the main.min.js in production or main.js for development purposes.
-
-### Sourcemaps
-
-The source maps allow you to debug the original javascript / Coffeescript files in your browser (use Chrome! if you don't already). 
-
-[See](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) for more information.
+- master
+	- compass
+	- coffee
+	- jshint
+	- concat
+	- minify
+	- imagemin
+	- watch
+- less
+	- **less**
+	- coffee
+	- jshint
+	- concat
+	- minify
+	- imagemin
+	- watch
+- requirejs
+	- compass
+	- coffee
+	- jshint
+	- **requirejs**
+	- imagemin
+	- watch
+- handlebars
+	- compass
+	- coffee
+	- jshint
+	- requirejs
+	- **handlebars**
+	- imagemin
+	- watch
+- jade
+	- compass
+	- coffee
+	- jshint
+	- requirejs
+	- **jade**
+	- imagemin
+	- watch
