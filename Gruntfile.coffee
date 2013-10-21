@@ -73,6 +73,10 @@ module.exports = (grunt) ->
           "assets/js/templates.js": "assets/templates/**/*.handlebars"
 
     watch:
+      options:
+        atBegin: true
+        interrupt: true
+        spawn: false
       app:
         files: ['assets/coffee/**/*.coffee']
         tasks: ['coffee']
