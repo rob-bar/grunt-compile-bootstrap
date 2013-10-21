@@ -63,6 +63,10 @@ module.exports = (grunt) ->
         ]
 
     watch:
+      options:
+        atBegin: true
+        interrupt: true
+        spawn: false
       app:
         files: ['assets/coffee/**/*.coffee']
         tasks: ['coffee']
