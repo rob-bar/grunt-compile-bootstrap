@@ -8,7 +8,7 @@ module.exports = (grunt) ->
       app:
         options:
           require: ['compass-h5bp'] #to use compass libs ex: ,'ceaser-easing'
-          sassDir: 'assets/css'
+          sassDir: 'assets/sass'
           cssDir: 'assets/css'
           imagesDir: 'assets/img'
           fontsDir: 'assets/font'
@@ -71,10 +71,10 @@ module.exports = (grunt) ->
         files: ['assets/coffee/**/*.coffee']
         tasks: ['coffee']
       sass:
-        files: ['assets/css/**/*.sass']
+        files: ['assets/sass/**/*.sass']
         tasks: ['compass']
       scss:
-        files: ['assets/css/**/*.scss']
+        files: ['assets/sass/**/*.scss']
         tasks: ['compass']
 
   # Default task.
